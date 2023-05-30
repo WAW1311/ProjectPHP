@@ -1,0 +1,658 @@
+html {
+  scroll-behavior: smooth;
+  font-family: "Roboto", sans-serif;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+nav {
+  margin-top: -5px;
+  display: flex;
+  justify-content: space-around;
+  height: 60px;
+  width: 100%;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  color: black;
+  box-shadow: 5px 5px 5px black;
+  position: fixed;
+  z-index: 1;
+
+}
+.logo {
+  font-size: 20px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  width: 40%;
+  justify-content: space-between;
+}
+
+nav ul li a {
+  color: black;
+  text-decoration: none;
+  padding: 12px;
+  font-size: 20px;
+  border-radius: 9px;
+}
+
+nav ul li a:hover {
+  color: rgb(255, 255, 255);
+  background: black;
+  border-radius: 9px;
+  transition: all 0.4s ease-in-out;
+}
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  height: 20px;
+  justify-content: space-between;
+  position: relative;
+}
+.menu-toggle input {
+  position: absolute;
+  width: 40px;
+  height: 28px;
+  left: -10px;
+  top: -7px;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+.menu-toggle span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: black;
+  border-radius: 3px;
+  transition: all 0.5s;
+}
+.menu-toggle span:nth-child(2) {
+  background-color: black;
+  transform-origin: 0 0;
+}
+.menu-toggle span:nth-child(4) {
+  background-color: black;
+  transform-origin: 0 100%;
+}
+.menu-toggle input:checked ~ span:nth-child(2) {
+  transform: rotate(45deg) translate(-1px, -1px);
+}
+.menu-toggle input:checked ~ span:nth-child(4) {
+  transform: rotate(-45deg) translate(-1px, 0);
+}
+.menu-toggle input:checked ~ span:nth-child(3) {
+  opacity: 0;
+  transform: scale(0);
+}
+.parallax-container {
+  margin-top: 5px;
+  background-image: url(assets/ImageHero3.jpg);
+  background-size: cover;
+  width: 100%;
+  height: 610px;
+}
+
+.deskripsi > h1 {
+  position: absolute;
+  font-family: "Roboto", sans-serif;
+  font-size: 35px;
+  top: 250px;
+  left: 70px;
+  color: white;
+}
+.deskripsi > h3 {
+  position: absolute;
+  font-size: 25px;
+  font-family: "Roboto", sans-serif;
+  top: 320px;
+  left: 70px;
+  color: white;
+}
+
+.deskripsi > a > h4 {
+  position: absolute;
+  padding-top: 14px;
+  text-align: center;
+  font-size: 20px;
+  width: 190px;
+  top: 450px;
+  left: 70px;
+  height: 55px;
+  box-sizing: border-box;
+  background: black;
+  color: white;
+  border-radius: 10px;
+  border: 3px solid;
+  transition: 0.3s ease-out;
+}
+
+.deskripsi > a > h4:hover {
+  background-color: transparent;
+  color: black;
+}
+
+.container-about {
+  width: 100%;
+  height: 100vh;
+}
+.tentang {
+  margin-top: 150px;
+  text-align: right;
+  margin-right: 100px;
+  
+}
+.tentang > h1 {
+  margin-top: -10px;
+  font-size: 40px;
+}
+.tentang > h2 {
+  font-size: 15px;
+  margin-right: 145px;
+  color: rgb(151, 151, 151);
+}
+.about {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.about img {
+  margin-top: -100px;
+}
+.about > h3 {
+  color: rgb(91, 91, 91);
+  font-size: 20px;
+  line-height: 35px;
+}
+.container-produk {
+    width: 100%;
+  position: absolute;
+  margin-top: -100px;
+}
+
+.produk {
+  text-align: center;
+}
+.produk > h2 {
+  font-size: 15px;
+  color: rgb(151, 151, 151);
+}
+.produk > h1 {
+  margin-top: -10px;
+  font-size: 50px;
+}
+.produk > h3 {
+  font-size: 25px;
+  margin-top: -20px;
+  color: rgb(114, 114, 114);
+}
+
+.baris1 {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.fontbaris1 {
+  margin-left: -10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.icon1 {
+  display: flex;
+  justify-content: space-around;
+  margin-left: -60px;
+}
+
+.icon1 .fav1 {
+  margin-left: 50px;
+  font-size: 30px;
+  z-index: -1px;
+  transition: 0.3s ease-out;
+}
+
+.icon1 .fav1:hover {
+  color: red;
+  z-index: 1px;
+  overflow: visible;
+  cursor: pointer;
+}
+
+.icon1 .star1 {
+  margin-left: -180px;
+  font-size: 30px;
+  transition: 0.3s ease-out;
+}
+
+.icon1 .star1:hover {
+  color: red;
+  z-index: 1px;
+  overflow: visible;
+  cursor: pointer;
+}
+
+.icon1 .fav2 {
+  margin-left: 10px;
+  font-size: 30px;
+  transition: 0.3s ease-out;
+}
+
+.icon1 .fav2:hover {
+  color: red;
+  z-index: 1px;
+  overflow: visible;
+  cursor: pointer;
+}
+
+.icon1 .star2 {
+  margin-left: -170px;
+  font-size: 30px;
+  transition: 0.3s ease-out;
+}
+
+.icon1 .star2:hover {
+  color: red;
+  z-index: 1px;
+  overflow: visible;
+  cursor: pointer;
+}
+
+.paraf {
+  display: flex;
+  justify-content: space-around;
+  margin-left: -35px;
+  margin-top: -41px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.paraf .iu1 {
+  margin-left: 82px;
+}
+
+.paraf .iu2 {
+  margin-left: -125px;
+}
+
+.paraf .iu3 {
+  margin-left: 70px;
+}
+.paraf .iu4 {
+  margin-left: -115px;
+}
+
+.button {
+  display: flex;
+  justify-content: space-around;
+}
+
+.button1 {
+  margin-right: 25px;
+  margin-left: 8px;
+}
+
+.button2 {
+  margin-right: -7px;
+}
+
+button {
+  width: 150px;
+  height: 30px;
+  background-color: black;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: 0.3s ease-out;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: transparent;
+}
+
+button a {
+  color: white;
+  text-decoration: none;
+  transition: 0.3s ease-out;
+}
+
+button a:hover {
+  color: black;
+}
+
+.baris2 {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.fontbaris2 {
+  margin-left: -10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.baris3 {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.fontbaris3 {
+  margin-left: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.fontbaris3 h1 {
+  margin-left: -5px;
+}
+
+.fontbaris3 h2 {
+  margin-right: -20px;
+}
+
+.kontak {
+  height: 5vh;
+}
+.container-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 50vh;
+}
+.container-contact > h2 {
+  margin-top: 50px;
+  font-size: 20px;
+  color: rgb(151, 151, 151);
+}
+.container-contact > h1 {
+  margin-top: -10px;
+  font-size: 50px;
+}
+
+.container-contact section {
+  display: flex;
+  justify-content: center;
+}
+
+.form {
+  margin-top: -15px;
+  padding-top: 15px;
+  text-align: center;
+  width: 300px;
+  height: 300px;
+  box-sizing: border-box;
+  background: rgb(150, 150, 150);
+  color: white;
+  border-radius: 10px;
+  border: 3px solid;
+}
+
+.form-nama {
+  width: 275px;
+  height: 25px;
+}
+
+.form-email {
+  width: 275px;
+  height: 25px;
+}
+
+.form-message {
+  width: 275px;
+  height: 120px;
+}
+
+.end {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-top: 200px;
+  width: 100%;
+  height: 40vh;
+  background-color: rgb(151, 151, 151);
+}
+
+.alamat {
+  margin-top: 120px;
+  color: white;
+  text-align: center;
+}
+
+.alamat > h1 {
+  font-size: 20px;
+  text-decoration: underline;
+}
+
+.alamat > h2 {
+  font-size: 12px;
+  margin-top: 30px;
+  color: rgb(235, 235, 235);
+}
+
+.sosmed {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+}
+.icon {
+  padding-top: 100px;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+}
+.tombol {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background: #f1f1f1;
+  margin: 10px;
+  border-radius: 30px;
+  box-sizing: 0 5px 15px -5px #00000070;
+  overflow: hidden;
+  position: relative;
+  color: #2980b9;
+}
+
+.tombol i {
+  transition: 0.2s linear;
+  font-size: 26px;
+  line-height: 50px;
+}
+.tombol:hover i {
+  transform: scale(1.3);
+  color: #f1f1f1;
+}
+.tombol:before {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  left: 110px;
+  top: 90%;
+  transform: rotate(45deg);
+  background: rgb(58, 58, 58);
+}
+.tombol:hover::before {
+  left: -10px;
+  top: -10%;
+  animation: aaa 0.7s 1;
+}
+@keyframes aaa {
+  0% {
+    left: -110px;
+    top: 90%;
+  }
+  50% {
+    left: 10px;
+    top: -30%;
+  }
+  100% {
+    left: -10px;
+    top: -10%;
+  }
+}
+.copyright {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 50px;
+  background-color: rgb(151, 151, 151);
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .parallax-container {
+    width: 100%;
+  }
+  nav ul{
+    margin-right: 20px;
+    justify-content: space-evenly;
+
+  }
+  nav ul li {
+    margin-right: 50px;
+  }
+  .logo {
+    margin-left: -50px;
+  }
+  .tentang {
+    margin-top: 100px;
+    text-align: center;
+    margin-left: 50px;
+  }
+  .tentang > h2 {
+    margin-left: 115px;
+  }
+  .about {
+    align-items: center;
+    flex-direction: column;
+  }
+  .about img {
+    margin-top: 10px;
+    margin-left: -30px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .parallax-container {
+    width: 576px;
+  }
+  .menu-toggle {
+      display: flex;
+  }
+  nav ul {
+      position: absolute;
+      top: 25px;
+      right: -20px;
+      width: 228px;
+      height: 50vh;
+      justify-content: space-evenly;
+      flex-direction: column;
+      align-items: center;
+      background-color: rgb(255, 255, 255);
+      z-index: -1;
+      transform: translateX(100%);
+      transition: all 1s;
+      opacity: 0;
+  }
+  nav ul.slide {
+      opacity: 1;
+      transform: translateX(0);
+  }
+  .deskripsi > h1 {
+    font-size: 30px;
+    margin-left: -30px;
+  }
+  .deskripsi > h3 {
+    font-size: 20px;
+    margin-left: -30px;
+  }
+  .deskripsi > a > h4 {
+    margin-left: -30px;
+  }
+  .tentang {
+    text-align: left;
+    margin-top: 100px;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 25px;
+  }
+  .tentang h1 {
+    font-size: 30px;
+    padding-left: 65px;
+  }
+  .tentang h2 {
+    margin-right: 50px;
+    margin-left: 125px;
+  }
+  .about img {
+    width: 576px;
+    margin-left: 1px;
+  }
+  .about > h3 {
+    font-size: 20px;
+    line-height: 30px;
+    margin-left: 10px;
+  }
+  .container-produk {
+    margin-top: -100px;
+  }
+  .produk > h1 {
+    font-size: 35px;
+  }
+  .produk > h3 {
+    font-size: 20px;
+  }
+  .icon1 {
+    display: none;
+  }
+  .paraf {
+    display: none;
+  }
+  .baris1 img {
+    width: 250px;
+    height: 150px;
+  }
+  .baris2 img {
+    width: 250px;
+    height: 150px;
+  }
+  .baris3 img {
+    width: 250px;
+    height: 150px;
+  }
+  .end {
+    margin-top: 250px;
+    width: 576px;
+  }
+  .container-contact {
+    width: 100%;
+  }
+  .copyright {
+    width: 576px;
+  }
+  .container-about {
+    width: 100%;
+    height: 84vh;
+  }
+  .container-product {
+    width: 100%;
+    margin-top: 0;
+  }
+}
